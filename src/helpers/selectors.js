@@ -1,3 +1,9 @@
+/**
+ * Appointments selector function
+ * @param {object} state - React state object
+ * @param {string} day - name
+ * @returns an array of interviews for the given day, or null if not found
+ */
 export function getAppointmentsForDay(state, day) {
   const output = [];
   const daysArr = state.days;
@@ -5,7 +11,7 @@ export function getAppointmentsForDay(state, day) {
   let flag = false;
 
   if (state.days.length === 0 || !state.days) return [];
-  
+
   for (let dayItem of daysArr) {
     if (dayItem.name === day) {
       appointmentArr = dayItem.appointments;
@@ -21,6 +27,12 @@ export function getAppointmentsForDay(state, day) {
   return output;
 }
 
+/**
+ * Interviewers selector function
+ * @param {object} state - React state object
+ * @param {string} day - name
+ * @returns an array of interviewers for the given day, or null if not found
+ */
 export function getInterviewersForDay(state, day) {
   const output = [];
   const daysArr = state.days;
@@ -45,6 +57,12 @@ export function getInterviewersForDay(state, day) {
   return output;
 }
 
+/**
+ * Interview selector function
+ * @param {object} state - React state object
+ * @param {object} interview - interview object
+ * @returns interview object
+ */
 export function getInterview(state, interview) {
   const output = {};
   if (!interview) return null;
