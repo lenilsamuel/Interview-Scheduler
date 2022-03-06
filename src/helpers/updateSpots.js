@@ -11,6 +11,4 @@ export default function updateSpots(action, state) {
     }
   });
   return daysArr;
-};
-
-// export updateSpots();
+}

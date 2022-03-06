@@ -29,6 +29,10 @@ export default function Appointment(props) {
       student: name,
       interviewer,
     };
+    if (!interviewer) {
+      alert('Please select an interviewer')
+      return;
+    }
     transition(SAVING);
     props
       .bookInterview(props.id, interview)
@@ -36,18 +40,6 @@ export default function Appointment(props) {
       .catch((e) => transition(ERROR_SAVE, true));
   };
 
-  // const deleteApt = (name, interviewer) => {
-  //   const interview = {
-  //     student: name,
-  //     interviewer,
-  //   };
-
-  //   transition(DELETE, true);
-  //   props
-  //     .cancelInterview(props.id, interview)
-  //     .then(() => transition(EMPTY))
-  //     .catch((e) => transition(ERROR_DELETE, true));
-  // };
 
   function destroy(event) {
     transition(DELETE, true);
@@ -95,7 +87,6 @@ export default function Appointment(props) {
       {mode === EDIT && (
         <Form
           student={props.interview.student}
-          // value={props.interview.student}
           interviewer={props.interview.interviewer.id}
           interviewers={props.interviewers}
           onSave={save}
