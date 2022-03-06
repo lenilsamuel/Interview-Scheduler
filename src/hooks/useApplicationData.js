@@ -40,7 +40,6 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment,
     };
-    console.log(state.appointments);
     return axios.put(`api/appointments/${id}`, appointment).then(() => {
       if (!state.appointments[id].interview) {
         const days = updateSpots("book", state);

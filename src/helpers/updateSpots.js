@@ -1,4 +1,4 @@
-const updateSpots = (action, state) => {
+export default function updateSpots(action, state) {
   const selectedDay = state.day;
   const daysArr = [...state.days];
   daysArr.forEach((day) => {
@@ -13,4 +13,4 @@ const updateSpots = (action, state) => {
   return daysArr;
 };
 
-export default function updateSpots();
+// export updateSpots();

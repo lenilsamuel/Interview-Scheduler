@@ -5,6 +5,7 @@ export function getAppointmentsForDay(state, day) {
   let flag = false;
 
   if (state.days.length === 0 || !state.days) return [];
+  
   for (let dayItem of daysArr) {
     if (dayItem.name === day) {
       appointmentArr = dayItem.appointments;
