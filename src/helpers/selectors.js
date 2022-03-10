@@ -67,9 +67,9 @@ export function getInterview(state, interview) {
   const output = {};
   if (!interview) return null;
   const target = interview.interviewer;
-
+  
   for (let key in state.interviewers) {
-    if (key == target) {
+    if (Number(key) === target) {
       output["student"] = interview.student;
       output["interviewer"] = state.interviewers[key];
     }
