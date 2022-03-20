@@ -29,14 +29,14 @@ export default function Appointment(props) {
       student: name,
       interviewer,
     };
-    if (!name) {
-      alert('Please enter a name')
-      return;
-    }
-    if (!interviewer) {
-      alert('Please select an interviewer')
-      return;
-    }
+    // if (!name) {
+    //   alert('Please enter a name')
+    //   return;
+    // }
+    // if (!interviewer) {
+    //   alert('Please select an interviewer')
+    //   return;
+    // }
     transition(SAVING);
     props
       .bookInterview(props.id, interview)
